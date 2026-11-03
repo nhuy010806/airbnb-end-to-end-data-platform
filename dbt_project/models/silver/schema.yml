@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: silver_airbnb_cleaned
+    description: "Dữ liệu Airbnb sau khi khử trùng lặp và làm sạch chuẩn hóa"
+    columns:
+      - name: listing_id
+        description: "Khóa chính duy nhất"
+        tests:
+          - unique
+          - not_null
+
+      - name: price_usd
+        description: "Giá phòng dạng float"
+        tests:
+          - not_null
+
+      - name: neighbourhood_group
+        description: "5 quận chuẩn của New York"
+        tests:
+          - accepted_values:
+              values: ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island', 'Other/Unknown']
+
+      - name: minimum_nights
+        description: "Số đêm phải nằm trong khoảng hợp lý"
+        tests:
+          - not_null

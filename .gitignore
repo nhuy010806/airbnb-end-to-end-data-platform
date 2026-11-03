@@ -1,0 +1,11 @@
+credentials/
+*.json
+*.pkl
+models_saved/*
+!models_saved/.gitkeep
+logs/
+plugins/
+__pycache__/
+dbt_project/target/
+dbt_project/dbt_packages/
+.env
